@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using BlazorTraining.Services;
+using Microsoft.AspNetCore.Components;
 
 namespace BlazorTraining.Shared
 {
@@ -6,6 +7,8 @@ namespace BlazorTraining.Shared
     {
         protected bool DarkThemeOn;
         protected string AlertTheme => DarkThemeOn ? "dark" : "light";
+        [Inject]
+        protected RandomService RandomService { get; set; }
 
         [Parameter]
         public RenderFragment ChildContent { get; set; }
